@@ -1,0 +1,6 @@
+<resources>
+  <string name="app_name">Github Users Explorer</string>
+  <string name="action_details">View details</string>
+  <string name="backdrop_title">Love coding</string>
+  <string name="backdrop_subtitle">The world\'s leading software development platform</string>
+</resources>
