@@ -1,6 +1,8 @@
 package com.diazadriang.apiexample
 
 import android.content.Context
+import android.content.Intent
+import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -65,6 +67,9 @@ class GithubUserHolder(context: Context, itemView: View) : RecyclerView.ViewHold
     popup.setOnMenuItemClickListener { menuItem ->
       if (menuItem?.itemId == R.id.action_view_details){
         Log.d("Click", "view details")
+        val intent: Intent = Intent(mContext, UserDetails::class.java)
+        intent.putExtra("USER", mUser?.login)
+        mContext.startActivity(intent)
         true
       }else {
         false
