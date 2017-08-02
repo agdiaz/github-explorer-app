@@ -8,17 +8,23 @@ This is an example of a simple Android App using:
 - RxAndroid
 - `RecyclerView`s and `CardView`s
 
+## Download latest version
+[Github-explorer-app.apk](bin/github-explorer-app.apk)
+
+## Screenshots
+![api-example-v2](https://user-images.githubusercontent.com/1646576/28874722-6fa1da2c-7769-11e7-902b-301838489757.gif)
+
 ## About REST API
 We use two public endpoints of Github in the class `GithubService`:
 
 ### /users
 It a list of users registered in Github.
 
-Response example:
-https://api.github.com/users/since=230
+Response example for https://api.github.com/users/since=230
+
 ```json
-[  
-   {  
+[
+   {
       login:"jhardy-deleteme",
       id:231,
       avatar_url:"https://avatars3.githubusercontent.com/u/231?v=4",
@@ -37,7 +43,7 @@ https://api.github.com/users/since=230
       type:"User",
       site_admin:false
    },
-   {  
+   {
       login:"daikini",
       id:232,
       avatar_url:"https://avatars3.githubusercontent.com/u/232?v=4",
@@ -65,12 +71,12 @@ We use this endpoint to show user's repositories information.
 
 Response example for https://api.github.com/users/jhardy-deleteme/repos
 ```json
-[  
-   {  
+[
+   {
       id:4473,
       name:"chunky_bacon",
       full_name:"daikini/chunky_bacon",
-      owner:{  
+      owner:{
          login:"daikini",
          id:232,
          avatar_url:"https://avatars3.githubusercontent.com/u/232?v=4",
@@ -158,9 +164,6 @@ Response example for https://api.github.com/users/jhardy-deleteme/repos
    // ...
 ]
 ```
-
-## Screenshots
-![api-example-v2](https://user-images.githubusercontent.com/1646576/28874722-6fa1da2c-7769-11e7-902b-301838489757.gif)
 
 ## Related links
 - [Kotlin Syntax Reference](https://kotlinlang.org/docs/reference/basic-syntax.html)
