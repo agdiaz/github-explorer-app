@@ -21,6 +21,10 @@ class MainActivity : AppCompatActivity() {
 
     setRecyclerView()
     setObservers()
+
+    if (savedInstanceState != null && savedInstanceState.containsKey("USERS")){
+      displayUsers(savedInstanceState.get("USERS") as ArrayList<GithubUser>)
+    }
   }
 
   override fun onStart() {
@@ -28,6 +32,14 @@ class MainActivity : AppCompatActivity() {
 
     if (mUsers.isEmpty()) {
       mListPresenter?.loadUsers()
+    }
+  }
+
+  override fun onSaveInstanceState(outState: Bundle?) {
+    super.onSaveInstanceState(outState)
+
+    if (mUsers.isNotEmpty()) {
+      outState?.putParcelableArrayList("USERS", mUsers)
     }
   }
 
