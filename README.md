@@ -170,7 +170,7 @@ Response example for https://api.github.com/users/jhardy-deleteme/repos
 - [RecyclerView with cardview using Kotlin in Android](http://ktutorials.com/kotlin/recyclerview-with-cardview-using-kotlin-in-android/)
 - [Android working with Card View and Recycler View](https://www.androidhive.info/2016/05/android-working-with-card-view-and-recycler-view/)
 
-## Thanks to
-- @pato94
-- @garispe
-- @roddeluca
+## Thanks to the Restorando Android Team
+- [@pato94](https://github.com/pato94)
+- [@garispe](https://github.com/garispe)
+- [@roddeluca](https://github.com/roddeluca)
