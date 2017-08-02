@@ -31,13 +31,11 @@ dependencies {
   compile 'com.squareup.retrofit:retrofit:1.9.0'
   compile 'io.reactivex:rxjava:1.0.4'
   compile 'io.reactivex:rxandroid:0.24.0'
+  compile 'com.jakewharton.rxbinding:rxbinding:0.2.0'
   compile 'com.jakewharton:butterknife:6.1.0'
   compile 'com.android.support:recyclerview-v7:26.+'
   compile 'com.android.support:cardview-v7:26.+'
   compile 'com.squareup.picasso:picasso:2.5.2'
-  //  compile 'com.fasterxml.jackson.core:jackson-annotations:2.8.5'
-  //  compile 'com.squareup.retrofit:converter-jackson:2.1.0'
-  //  compile group: 'com.squareup.retrofit', name: 'converter-jackson', version: '1.9.0'
   testCompile 'junit:junit:4.12'
 }
 repositories {

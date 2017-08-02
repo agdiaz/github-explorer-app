@@ -5,8 +5,9 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
-import android.view.View
+import android.widget.Button
 import com.diazadriang.apiexample.models.GithubUser
+import com.jakewharton.rxbinding.view.RxView
 
 class MainActivity : AppCompatActivity() {
   private val mUsers = ArrayList<GithubUser>()
@@ -18,14 +19,8 @@ class MainActivity : AppCompatActivity() {
     super.onCreate(savedInstanceState)
     setContentView(R.layout.activity_main)
 
-    val recyclerView = findViewById(R.id.recycler_view) as RecyclerView
-    mLinearLayoutManager = LinearLayoutManager(this)
-    recyclerView.layoutManager = mLinearLayoutManager
-
-    mAdapter = GithubUserAdapter(this, mUsers)
-    mListPresenter = GithubUsersListPresenter(this, GithubService())
-
-    recyclerView.adapter = mAdapter
+    setRecyclerView()
+    setObservers()
   }
 
   override fun onStart() {
@@ -36,8 +31,23 @@ class MainActivity : AppCompatActivity() {
     }
   }
 
-  fun fetch(view: View){
-    mListPresenter?.loadUsers()
+  fun setRecyclerView(){
+    val recyclerView = findViewById(R.id.recycler_view) as RecyclerView
+    mLinearLayoutManager = LinearLayoutManager(this)
+    recyclerView.layoutManager = mLinearLayoutManager
+
+    mAdapter = GithubUserAdapter(this, mUsers)
+    mListPresenter = GithubUsersListPresenter(this, GithubService())
+
+    recyclerView.adapter = mAdapter
+  }
+
+  fun setObservers(){
+    RxView.clicks(findViewById(R.id.queryButton))
+        .subscribe {
+          Log.d("observer", "Click on queryButton")
+          mListPresenter?.loadUsers()
+        }
   }
 
   fun displayUsers(users: List<GithubUser>) {
